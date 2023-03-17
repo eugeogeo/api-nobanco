@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) [year]
+Copyright (c) 2023
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -12,7 +12,7 @@ furnished to do so, subject to the following conditions:
 ---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![License File](https://img.shields.io/badge/license-⬇️%20Download%20License-blue)](https://raw.githubusercontent.com/[eugeogeo]/[api-nobanco]/main/LICENSE)
+[![License File](https://img.shields.io/badge/license-⬇️%20Download%20License-blue)](https://raw.githubusercontent.com/[eugeogeo]/[api-nobanco]/main/LICENSE.md)
 
 ---
 

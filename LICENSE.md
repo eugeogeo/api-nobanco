@@ -12,7 +12,7 @@ furnished to do so, subject to the following conditions:
 ---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![License File](https://img.shields.io/badge/license-⬇️%20Download%20License-blue)](https://raw.githubusercontent.com/[username]/[repo]/main/LICENSE)
+[![License File](https://img.shields.io/badge/license-⬇️%20Download%20License-blue)](https://raw.githubusercontent.com/[eugeogeo]/[api-nobanco]/main/LICENSE)
 
 ---
 

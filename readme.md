@@ -39,4 +39,4 @@ Liste os endpoints disponíveis na sua API e suas descrições.
 
 ## Licença
 
-Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais informações.
+Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais informações.

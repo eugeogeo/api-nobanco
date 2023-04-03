@@ -21,8 +21,7 @@ from usuarios.api.viewsets import UsuarioViewSet
 from usuarios.api.viewsets import ContaGeralViewSet
 from usuarios.api.viewsets import SaldoViewSet
 from usuarios.api.viewsets import CompraViewSet
-from usuarios.views import UsuarioCreateView
-from usuarios.views import UsuarioList
+from usuarios.views import UsuarioCreateView, UsuarioList, UsuarioDetailView, UsuarioUpdateView
 route = routers.DefaultRouter()
 
 route.register(r'usuarios', UsuarioViewSet, basename='Usuarios')
@@ -35,8 +34,10 @@ route.register(r'compras', CompraViewSet, basename='Compras')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('usuarios-create/', UsuarioCreateView.as_view(), name='usuario_create'),
-    path('usuarios-listar/', UsuarioList.as_view(), name='usuario_list'),
+    path('createUser/', UsuarioCreateView.as_view(), name='usuario_create'),
+    path('listUser/', UsuarioList.as_view(), name='usuario_list'),
+    path('deleteUser/<int:pk>/', UsuarioDetailView.as_view(), name='usuario_detail'),
+    path('updateUser/<int:pk>/', UsuarioUpdateView.as_view(), name='usuario_update'),
     path('', include(route.urls)),
 ]
 

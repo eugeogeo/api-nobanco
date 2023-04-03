@@ -1,4 +1,5 @@
 from rest_framework.views import APIView
+from rest_framework.generics import UpdateAPIView
 from rest_framework.response import Response
 from rest_framework import status
 from .api.serializers import UsuarioSerializer
@@ -16,3 +17,11 @@ class UsuarioCreateView(APIView):
 class UsuarioList(generics.ListAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
+
+class UsuarioDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+class UsuarioUpdateView(UpdateAPIView):
+    serializer_class = UsuarioSerializer
+    queryset = Usuario.objects.all()

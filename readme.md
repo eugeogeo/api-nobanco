@@ -11,7 +11,7 @@ Descrição breve do projeto.
 
 1. Clone o repositório em sua máquina local:
 
-   `git clone https://github.com/seu-usuario/nome-do-projeto.git`
+   `git clone https://github.com/eugeogeo/api-nobanco.git`
 
 2. Instale as dependências:
 
@@ -36,6 +36,14 @@ Descrição breve do projeto.
 ## Endpoints
 
 Liste os endpoints disponíveis na sua API e suas descrições.
+
+## Testes
+
+Para rodar os testes, execute o seguinte comando na raiz do projeto:
+
+   `python manage.py test` ou `python3 manage.py test`
+   
+Esse comando vai rodar todos os testes da sua aplicação e exibir o resultado no console. Certifique-se de que o ambiente de teste esteja configurado corretamente antes de rodar os testes.
 
 ## Licença
 

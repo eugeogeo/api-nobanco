@@ -10,9 +10,26 @@ class UserCreateView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
+            cpf = serializer.validated_data.get('cpf')
+            if User.objects.filter(cpf=cpf).exists():
+                response_data = {
+                    "message": "Usuario já cadastrado",
+                    "ok": False
+                }
+                return Response(response_data, status=status.HTTP_409_CONFLICT)
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            response_data = {
+                    "message": "Usuario cadastrado com sucesso.",
+                    "ok": True
+            }
+            return Response(response_data, status=status.HTTP_201_CREATED)
+        response_data = {
+            "message": "Não foi possivel criar o usuario.",
+            "user_created": False,
+            "errors": serializer.errors
+        }
+        return Response(response_data, status=status.HTTP_401_UNAUTHORIZED)
+        
     
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()

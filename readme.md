@@ -5,7 +5,7 @@
 ## Requisitos
 
 - Python 3.x
-- Django 3.x
+- Django 4.x
 - Django REST Framework
 
 ## Instalação

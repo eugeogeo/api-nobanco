@@ -39,7 +39,7 @@
 
 ## Endpoints
 
-Lista todos os usuários cadastrados: `/userList/`.
+Lista todos os usuários cadastrados: `/listUser/`.
 
 Permite visualizar, atualizar um usuário específico:`/updateUser/<int:pk>/`.
 

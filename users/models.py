@@ -1,17 +1,20 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
+from django.contrib.auth.backends import ModelBackend
+from django.contrib.auth import get_user_model
 # Create your models here.
 
 import re
 
 class User(models.Model):
+    id = models.AutoField(primary_key=True)
     cpf = models.CharField(max_length=14, unique=True)
     email = models.EmailField(unique=True)
     cellPhone = models.CharField(max_length=15)
     name = models.CharField(max_length=100)
     password = models.CharField(max_length=128)
-
+    deleted = models.BooleanField(default=False)
     def save(self, *args, **kwargs):
         self.full_clean()
         super().save(*args, **kwargs)

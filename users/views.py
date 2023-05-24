@@ -4,8 +4,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from .api.serializers import UserSerializer, GeneralAccountSerializer, BalanceSerializer, PurchaseSerializer
 from rest_framework import generics
-from .models import User, GeneralAccount, Balance, Purchase
-
+from users.models import User, GeneralAccount, Balance, Purchase
+from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework import status
+from django.shortcuts import get_object_or_404
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
 class UserCreateView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
@@ -38,6 +43,25 @@ class UserList(generics.ListAPIView):
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+    def delete(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            
+            # Lógica para excluir o usuário
+            
+            # Exemplo: excluindo o usuário definindo o campo "deleted" como True
+            instance.deleted = True
+            instance.save()
+            
+            response_data = {
+                "message": "Usuário deletado com sucesso.",
+                "ok": True
+            }
+            return Response(response_data, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 class UserUpdateView(UpdateAPIView):
     serializer_class = UserSerializer
